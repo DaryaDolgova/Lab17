@@ -1,0 +1,35 @@
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int main()
+
+{
+	int  N, i, x, y, x1, y1, n;
+	double d, m = 0;
+
+	cout << "N= " << endl;
+	cin >> N;
+	for (  i = 0; i < N ; i++) 
+	{
+		cin >> x; cin >> y;
+		if (x < 0 && y>0) 
+		{
+			d = sqrt(pow(x, 2) + pow(y, 2));
+				if (d > m) {
+					m = d;
+					x1 = x;
+					y1 = y;
+					n = i;
+			}
+		}
+	}
+	
+	if (m > 0) {
+		cout << "koordinaty "<< x1 << " " << y1 << endl;
+	}
+	else { cout << "0"<< endl; }
+
+	return 0;
+}
