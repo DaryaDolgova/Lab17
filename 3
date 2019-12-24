@@ -2,58 +2,62 @@
 
 using namespace std;
 
-int
-main ()
+int main ()
+
 {
-int i, n, l, j, t, r,K,Y,m,w;
-cout << "N= "; cin >> n;
-int *A = new int[n];
-int *B = new int[l];
-int *C = new int[l];
-l = 1;
-for (i=0; i<n; i++){cin>>A[i];}
-cout << "K= "; cin >> K;
-for (i=1; i<n; i++){
-if (A[i]!=A[i-1]){
-l++;
-}
-}
-C[0]=A[0];j=0;
-for (i=1; i<n;i++){
-if (A[i]!=A[i-1]) {
-j++;
-C[j]=A[i];
-}
-}
-r=0; t=1;
-for (i=0; i<n-1;i++){
-if (A[i]!=A[i+1]) {
-B[r]=t;
-t=1;
-r++;
-}
-else {
-t++;
-B[r]=t;
-}
-}
-Y=B[K-1];
-B[K-1]=B[l-1];
-B[l-1]=Y;
-Y=C[K-1];
-C[K-1]=C[l-1];
-C[l-1]=Y;
-int *Q=new int[n];
-cout<<"Q= ";
-w=0;
-for (r=0;r<l;r++){
-m=0;
-while (m<B[r]){
-Q[w]=C[r];
-m++;
-cout<<Q[w]<<" "<<ends;
-w++;
-}
-}
+    int i, n, l, j, t, r,K,Y,m,w;
+    
+    cout << "N= "; cin >> n;
+    int *A = new int[n];
+    int *B = new int[l];
+    int *C = new int[l];
+    l = 1;
+    
+    for (i=0; i<n; i++){cin>>A[i];}
+    cout << "K= "; cin >> K;
+    for (i=1; i<n; i++){
+        if (A[i]!=A[i-1]){
+            l++;
+        }
+    }
+    
+    C[0]=A[0];j=0;
+    for (i=1; i<n;i++){
+        if (A[i]!=A[i-1]) {
+            j++;
+            C[j]=A[i];
+        }
+    }
+    r=0; t=1;
+    for (i=0; i<n-1;i++){
+        if (A[i]!=A[i+1]) {
+            B[r]=t;
+            t=1;
+            r++;
+        } else {
+            t++;
+            B[r]=t;
+        }
+    }
+    Y=B[K-1];
+    B[K-1]=B[l-1];
+    B[l-1]=Y;
+    Y=C[K-1];
+    C[K-1]=C[l-1];
+    C[l-1]=Y;
+    
+    int *Q=new int[n];
+    cout<<"Q= ";
+    w=0;
+    for (r=0;r<l;r++){
+        m=0;
+        while (m<B[r]){
+            Q[w]=C[r];
+            m++;
+            cout<<Q[w]<<" "<<ends;
+            w++;
+        }
+    }
+
 return 0;
 } 
