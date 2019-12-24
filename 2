@@ -4,62 +4,64 @@ using namespace std;
 
 int main()
 {
-int i,n,l,j,t,r,e,p,w,m;
-cout<<"N= "; cin>>n;
-int *A=new int[n];
-int *B=new int[l]; 
-int *C=new int[l];
-cout<<"L= "; cin>>l;
-e=1;
-for (i=0; i<n; i++){cin>>A[i];}
-for (i=1; i<n; i++){
-if (A[i]!=A[i-1]){
-e++;
-}
-}
-C[0]=A[0];j=0;
-for (i=1; i<n;i++){
-if (A[i]!=A[i-1]) {
-j++;
-C[j]=A[i];
-}
-}
-r=0; t=1;
-for (i=0; i<n-1;i++){
-if (A[i]!=A[i+1]) {
-B[r]=t;
-t=1;
-r++;
-}
-else {
-t++;
-B[r]=t;
-}
-}
-p=0;
-for (r=0; r<e; r++){
-if(B[r]<=l){
-p=p+B[r];
-} else{
-p=p+1;
-}
-}
-int *Q=new int[p];
-w=0; 
-for (r=0; r<e; r++){
-if(B[r]<=l){
-m=0;
-while (m<B[r]){
-Q[w]=C[r];
-m++;
-w++;
-}
-} else {
-Q[w]=0;
-w++;
-}
-}
-cout<<"Q= ";
-for (w=0; w<p; w++){cout<<Q[w]<<" "<<ends;}
+    int i,n,l,j,t,r,e,p,w,m;
+    
+    cout<<"N= "; cin>>n;
+    int *A=new int[n];
+    int *B=new int[l]; 
+    int *C=new int[l];
+    cout<<"L= "; cin>>l;
+    e=1;
+    for (i=0; i<n; i++){cin>>A[i];}
+    for (i=1; i<n; i++){
+        if (A[i]!=A[i-1]){
+            e++;
+        }
+    }
+    C[0]=A[0];j=0;
+    for (i=1; i<n;i++){
+        if (A[i]!=A[i-1]) {
+            j++;
+            C[j]=A[i];
+        }
+    }
+    r=0; t=1;
+    for (i=0; i<n-1;i++){\
+    if (A[i]!=A[i+1]) {
+        B[r]=t;
+        t=1;
+        r++;
+    }
+    else {
+        t++;
+        B[r]=t;
+    }
+    }
+    p=0;
+    for (r=0; r<e; r++){
+        if(B[r]<=l){
+            p=p+B[r];
+        } else{
+            p=p+1;
+        }
+    }
+    int *Q=new int[p];
+    w=0; 
+    for (r=0; r<e; r++){
+        if(B[r]<=l){
+            m=0;
+            while (m<B[r]){
+                Q[w]=C[r];
+                m++;
+                w++;
+            }
+        } else {
+            Q[w]=0;
+            w++;
+        }
+    }
+    cout<<"Q= ";
+    for (w=0; w<p; w++){cout<<Q[w]<<" "<<ends;}
+    
 return 0;
 } 
